@@ -5,7 +5,7 @@ function FormSection() {
 
   return (
     <>
-      <InputField labelText="Enter your Kymani:" />
+      <InputField labelText="Enter your Kymani:"/>
     </>
   )
 }
@@ -27,6 +27,7 @@ function InputField(props) {
         id="name"
         name="name"
         autoComplete="off"
+        spellCheck="false"
         value={value}
         onChange={handleInputChange} />
 
