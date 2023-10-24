@@ -9,7 +9,7 @@ function FormInput(props) {
         name={props.id} 
         autoComplete="off" 
         spellCheck="false"
-        value={props.value}
+        value={props.value} 
         onChange={props.handleChange}
       /> 
     </>

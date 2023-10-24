@@ -13,14 +13,14 @@ function App() {
     address: ''
 
   })
- 
+
   function handleChange(e) {
     // grab the name attribute of the current input field
     const name = e.target.name
     // grab text/value inputted into input field
     const value = e.target.value
     // make a copy of the form data object to avoid mutating state
-    const updatedFormData = {...formData}
+    const updatedFormData = { ...formData }
     // update key value from form data object copy with value of 
     updatedFormData[name] = value
     // update form data with copy
@@ -30,12 +30,24 @@ function App() {
   return (
     <>
 
-    <FormInput labelText="Full name" />
+      <FormInput labelText="Full name" handleChange={handleChange} id="name" />
+
+      <br></br>
+
+      <FormInput labelText="Email" handleChange={handleChange} id="email" />
+
+      <br></br>
+
+      <FormInput labelText="Phone number" handleChange={handleChange} id="phone" />
+
+      <h1>{formData.name}</h1>
+
+      <h1>{formData.email}</h1>
+
+      <h1>{formData.phone}</h1>
 
 
-
-   
-    </> 
+    </>
   )
 }
 
