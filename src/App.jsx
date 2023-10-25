@@ -3,16 +3,19 @@ import FormInput from './components/FormInput';
 import { useState } from 'react';
 
 
+
 function App() {
 
-  // global object will be passed into different form components
+  // global object for form personal data
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
+    phone: '', 
     address: ''
-
   })
+
+  const [educationData, setEducationData] = useState([])
+  const [educationId, setEducationId] = useState(0)
 
   function handleChange(e) {
     // grab the name attribute of the current input field
@@ -25,6 +28,24 @@ function App() {
     updatedFormData[name] = value
     // update form data with copy
     setFormData(updatedFormData)
+  }
+
+  function addEducation() {
+    // create new education object
+    const newEducation = {
+      id: educationId,
+      school: '',
+      degreee: '',
+      start: '',
+      end: '',
+      location: ''
+    }
+
+    // update education ID state
+    setEducationId(educationId + 1)
+
+    setEducationData([...educationData, newEducation])
+    console.log(educationData)
   }
 
   return (
@@ -45,6 +66,8 @@ function App() {
       <h1>{formData.email}</h1>
 
       <h1>{formData.phone}</h1>
+
+      <button onClick={addEducation}>Add education!</button>
 
 
     </>
