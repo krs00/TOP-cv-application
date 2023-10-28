@@ -25,7 +25,7 @@ function App() {
     // make a copy of the form data object to avoid mutating state
     const updatedFormData = { ...formData }
     // update key value from form data object copy with value of 
-    updatedFormData[name] = value
+    updatedFormData[name] = value 
     // update form data with copy
     setFormData(updatedFormData)
   }
