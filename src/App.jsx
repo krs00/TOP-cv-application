@@ -1,5 +1,6 @@
 import './App.css'
 import FormInput from './components/FormInput';
+import PersonalForm from './components/PersonalForm';
 import Resume from './components/Resume';
 import { useState } from 'react';
 // import { v4 as uuidv4 } from 'uuid';
@@ -16,7 +17,7 @@ function App() {
     address: '' 
   })
 
-  function handleChange(e) {
+  function handleInputsChange(e) {
     // grab the name attribute of the current input field
     const name = e.target.name
     // grab text/value inputted into input field
@@ -27,15 +28,14 @@ function App() {
     updatedFormData[name] = value
     // update form data with copy
     setFormData(updatedFormData)
-  }
+  } 
 
  
   return (
     <>
-
-      <FormInput labelText="Full name" handleChange={handleChange} id="name" />
-
-      <Resume formData={formData} />
+    {/* <FormInput handleChange={handleChange} labelText="Name" id="name"/> */}
+    <PersonalForm handleInputsChange={handleInputsChange} /> 
+    <Resume name={formData.name} />  
 
     </>
   )
