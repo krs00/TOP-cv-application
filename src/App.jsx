@@ -1,6 +1,7 @@
 import './App.css'
 import FormInput from './components/FormInput';
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 
 
@@ -15,7 +16,6 @@ function App() {
   })
 
   const [educationData, setEducationData] = useState([])
-  const [educationId, setEducationId] = useState(0)
 
   function handleChange(e) {
     // grab the name attribute of the current input field
@@ -33,16 +33,13 @@ function App() {
   function addEducation() {
     // create new education object
     const newEducation = {
-      id: educationId,
+      id: uuidv4(),
       school: '',
       degreee: '',
       start: '',
       end: '',
       location: ''
     }
-
-    // update education ID state
-    setEducationId(educationId + 1)
 
     setEducationData([...educationData, newEducation])
     console.log(educationData)
