@@ -1,11 +1,9 @@
 import './App.css'
-import FormInput from './components/FormInput';
-import PersonalForm from './components/PersonalForm';
-import Resume from './components/Resume';
+import FormSection from './components/FormSection'; 
+import ResumeSection from './components/ResumeSection';
 import { useState } from 'react';
 // import { v4 as uuidv4 } from 'uuid';
-
-
+ 
 
 function App() {
 
@@ -14,7 +12,7 @@ function App() {
     name: '',
     email: '',
     phone: '',
-    address: '' 
+    address: ''
   })
 
   function handleInputsChange(e) {
@@ -33,10 +31,8 @@ function App() {
  
   return (
     <>
-    {/* <FormInput handleChange={handleChange} labelText="Name" id="name"/> */}
-    <PersonalForm handleInputsChange={handleInputsChange} /> 
-    <Resume name={formData.name} />  
-
+    <FormSection handleInputsChange={handleInputsChange} />
+    <ResumeSection formData={formData} />
     </>
   )
 }
