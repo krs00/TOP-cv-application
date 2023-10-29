@@ -1,4 +1,4 @@
-function EducationListFormSection() {
+function EducationList() {
     return (
       <>
       
@@ -7,5 +7,5 @@ function EducationListFormSection() {
     );
   }
   
-  export default EducationListFormSection;
+  export default EducationList;
   
