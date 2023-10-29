@@ -33,7 +33,12 @@ function App() {
     <>
     <FormSection handleInputsChange={handleInputsChange} />
     <ResumeSection formData={formData} />
-    </>
+    <p>{formData.name}</p>
+    <p>{formData.email}</p> 
+    <p>{formData.phone}</p> 
+    <p>{formData.address}</p>
+    {console.log(formData)} 
+    </> 
   )
 }
 

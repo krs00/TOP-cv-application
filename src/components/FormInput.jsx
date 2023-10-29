@@ -10,7 +10,7 @@ function FormInput(props) {
         autoComplete="off" 
         spellCheck="false"
         value={props.value} 
-        onChange={props.handleChange}
+        onChange={props.handleInputsChange}
       /> 
     </>
   );
