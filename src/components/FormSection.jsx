@@ -1,5 +1,5 @@
-import PersonalDetailsForm from "./FormSection-PersonalDetailsForm";
-import EducationControl from "./FormSection-EducationControl";
+import PersonalDetailsForm from "./FormSection/PersonalDetailsForm";
+import EducationControl from "./FormSection/EducationControl";
 
 function FormSection(props) {
     return ( 
