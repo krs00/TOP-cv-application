@@ -6,7 +6,10 @@ function FormSection(props) {
       <>
         <p>Form Section</p>
         <PersonalDetailsForm handleInputsChange={props.handleInputsChange} />
-        <EducationControl handleInputsChange={props.handleInputsChange}/> 
+
+        <EducationControl 
+        handleInputsChange={props.handleInputsChange} 
+        clearEducationData={props.clearEducationData} /> 
       </>
     );
   }

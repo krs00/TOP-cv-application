@@ -23,7 +23,7 @@ function App() {
     // experience section
     company: '',
     title: '',
-    expStart: '',
+    expStart: '', 
     expEnd: '',
     expLocation: '',
     description: '' 
@@ -40,18 +40,43 @@ function App() {
     updatedFormData[name] = value
     // update form data with copy
     setFormData(updatedFormData) 
-  } 
+  }
 
+  function clearEducationData() {
+    const updatedFormData = { ...formData }
+    updatedFormData.school = ""
+    updatedFormData.degree = ""
+    updatedFormData.eduStart = ""
+    updatedFormData.eduEnd = ""
+    updatedFormData.eduLocation = ""
+    setFormData(updatedFormData) 
+  }
+
+  // {console.log(formData)} 
  
   return (
-    <>
-    <FormSection handleInputsChange={handleInputsChange} />
+    <> 
+    <FormSection 
+    handleInputsChange={handleInputsChange} 
+    clearEducationData={clearEducationData}/>  
+
+
+
     <ResumeSection formData={formData} />
     <p>Name: {formData.name}</p>
     <p>Email: {formData.email}</p> 
     <p>Phone: {formData.phone}</p> 
     <p>Address: {formData.address}</p>
-    {console.log(formData)}
+
+    <br></br>
+    <p>~~~~~~~~~~~~~~~~~</p> 
+    <br></br>
+
+    <p>School: {formData.school}</p>
+    <p>Degree: {formData.degree}</p> 
+    <p>Start Date: {formData.eduStart}</p>
+    <p>End Date: {formData.eduEnd}</p>
+    <p>Location: {formData.eduLocation}</p>
     </> 
   )
 }

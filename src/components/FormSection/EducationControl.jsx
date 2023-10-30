@@ -1,4 +1,4 @@
-import EducationForm from "./EducationForm";
+import EducationForm from "./EducationForm"; 
 import { useState } from 'react';
 
 function EducationControl(props) {
@@ -6,6 +6,10 @@ function EducationControl(props) {
     const [isFormVisible, setFormVisible] = useState(false)
 
     function toggleEducationForm() {
+
+      const { clearEducationData } = props
+      clearEducationData()
+
       setFormVisible(!isFormVisible)
     }
 
@@ -14,6 +18,7 @@ function EducationControl(props) {
         <>
           <EducationForm handleInputsChange={props.handleInputsChange} />
           <button onClick={toggleEducationForm}>Cancel</button>
+
         </>
       ); 
     } else if (isFormVisible === false) {
