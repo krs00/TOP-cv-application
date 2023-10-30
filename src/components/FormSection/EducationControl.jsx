@@ -1,7 +1,7 @@
 import EducationForm from "./EducationForm";
 import { useState } from 'react';
 
-function EducationControl() {
+function EducationControl(props) {
 
     const [isFormVisible, setFormVisible] = useState(false)
 
@@ -12,7 +12,7 @@ function EducationControl() {
     if (isFormVisible === true) {
       return ( 
         <>
-          <EducationForm />
+          <EducationForm handleInputsChange={props.handleInputsChange} />
           <button onClick={toggleEducationForm}>Cancel</button>
         </>
       ); 
