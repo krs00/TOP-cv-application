@@ -9,10 +9,24 @@ function App() {
 
   // global object for form personal data
   const [formData, setFormData] = useState({
+    // personal section
     name: '',
     email: '',
     phone: '',
-    address: ''
+    address: '',
+    // education section
+    school: '',
+    degree: '',
+    eduStart: '',
+    eduEnd: '',
+    eduLocation: '',
+    // experience section
+    company: '',
+    title: '',
+    expStart: '',
+    expEnd: '',
+    expLocation: '',
+    description: '' 
   })
 
   function handleInputsChange(e) {
@@ -33,11 +47,11 @@ function App() {
     <>
     <FormSection handleInputsChange={handleInputsChange} />
     <ResumeSection formData={formData} />
-    <p>{formData.name}</p>
-    <p>{formData.email}</p> 
-    <p>{formData.phone}</p> 
-    <p>{formData.address}</p>
-    {console.log(formData)} 
+    <p>Name: {formData.name}</p>
+    <p>Email: {formData.email}</p> 
+    <p>Phone: {formData.phone}</p> 
+    <p>Address: {formData.address}</p>
+    {console.log(formData)}
     </> 
   )
 }
