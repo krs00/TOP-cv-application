@@ -1,15 +1,28 @@
+import EducationForm from "./EducationForm";
 import { useState } from 'react';
 
 function EducationControl() {
 
-    const [formVisible, setFormVisible] = useState(false)
+    const [isFormVisible, setFormVisible] = useState(false)
 
-    return ( 
-      <>
-      
+    function toggleEducationForm() {
+      setFormVisible(!isFormVisible)
+    }
 
-      </>
-    );
+    if (isFormVisible === true) {
+      return ( 
+        <>
+          <EducationForm />
+          <button onClick={toggleEducationForm}>Cancel</button>
+        </>
+      ); 
+    } else if (isFormVisible === false) {
+      return ( 
+        <>
+          <button onClick={toggleEducationForm}>Add Education</button>
+        </>
+      ); 
+    }
   }
   
   export default EducationControl;
