@@ -88,7 +88,7 @@ function App() {
     handleInputsChange={handleInputsChange} 
     clearEducationData={clearEducationData}
     educationList={educationList}
-    deleteEducation={deleteEducation}/> 
+    deleteEducation={deleteEducation} /> 
 
 
 
