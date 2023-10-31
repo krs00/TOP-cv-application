@@ -2,7 +2,18 @@
 
 /* global css here! */
 
- html {
-    font-family: 'Inter', sans-serif;
-  }
-  
+html {
+  font-family: 'Inter', sans-serif;
+}
+
+.education-list-item {
+  width: 400px;
+  height: 50px;
+  background-color: rgb(200, 200, 200); 
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.no-list-style {
+  list-style: none;
+} 

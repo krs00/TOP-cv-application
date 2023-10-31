@@ -1,5 +1,6 @@
 import './App.css'
 import FormSection from './components/FormSection'; 
+import EducationListItem from './components/FormSection/EducationListItem';
 import ResumeSection from './components/ResumeSection';
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
@@ -108,13 +109,12 @@ function App() {
 
     <p>Education List</p> 
 
-    <ul> 
+    <ul className='no-list-style'>
         {educationList.map(item => (
-          <li key={item.id}> 
-            {item.school}  
-          </li> 
+        <li key={item.id}>  <EducationListItem item={item} /> </li>
         ))}
-      </ul> 
+    </ul>
+
 
  
     </>
