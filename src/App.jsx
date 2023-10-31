@@ -1,6 +1,5 @@
 import './App.css'
 import FormSection from './components/FormSection'; 
-import EducationListItem from './components/FormSection/EducationListItem';
 import ResumeSection from './components/ResumeSection';
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
@@ -32,6 +31,12 @@ function App() {
 
   // holds created education objects
   const [educationList, setEducationList] = useState([])
+
+  function deleteEducation(idToRemove) {  
+    const updatedEducationList = [...educationList]
+    const filteredData = updatedEducationList.filter(item => item.id !== idToRemove);
+    setEducationList(filteredData)
+  }
 
   function handleInputsChange(e) {
     // grab the name attribute of the current input field
@@ -81,40 +86,14 @@ function App() {
     <FormSection
     addEducation={addEducation} 
     handleInputsChange={handleInputsChange} 
-    clearEducationData={clearEducationData}/>  
+    clearEducationData={clearEducationData}
+    educationList={educationList}
+    deleteEducation={deleteEducation}/> 
+
 
 
 
     <ResumeSection formData={formData} />
-
-    <br></br>
-    <p>Name: {formData.name}</p>
-    <p>Email: {formData.email}</p> 
-    <p>Phone: {formData.phone}</p> 
-    <p>Address: {formData.address}</p>
- 
-    <br></br>
-    <p>~~~~~~~~~~~~~~~~~</p> 
-    <br></br>
-
-    <p>School: {formData.school}</p>
-    <p>Degree: {formData.degree}</p> 
-    <p>Start Date: {formData.eduStart}</p>
-    <p>End Date: {formData.eduEnd}</p>
-    <p>Location: {formData.eduLocation}</p>
-
-    <br></br>
-    <p>~~~~~~~~~~~~~~~~~</p> 
-    <br></br>
-
-    <p>Education List</p> 
-
-    <ul className='no-list-style'>
-        {educationList.map(item => (
-        <li key={item.id}>  <EducationListItem item={item} /> </li>
-        ))}
-    </ul>
-
 
  
     </>
