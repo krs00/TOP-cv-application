@@ -10,7 +10,9 @@ function FormSection(props) {
         <EducationControl
         addEducation={props.addEducation}
         handleInputsChange={props.handleInputsChange} 
-        clearEducationData={props.clearEducationData} /> 
+        clearEducationData={props.clearEducationData}
+        educationList={props.educationList}
+        deleteEducation={props.deleteEducation} />  
       </>
     );
   }
