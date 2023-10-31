@@ -19,7 +19,7 @@ function App() {
     degree: '',
     eduStart: '',
     eduEnd: '',
-    eduLocation: '',
+    eduLocation: '', 
     // experience section
     company: '',
     title: '',
@@ -69,7 +69,6 @@ function App() {
     const updatedList = [...educationList]
     updatedList.push(newEducation)
     setEducationList(updatedList)
-    console.log(educationList)
     clearEducationData()
   }
 
@@ -102,7 +101,23 @@ function App() {
     <p>Start Date: {formData.eduStart}</p>
     <p>End Date: {formData.eduEnd}</p>
     <p>Location: {formData.eduLocation}</p>
-    </> 
+
+    <br></br>
+    <p>~~~~~~~~~~~~~~~~~</p> 
+    <br></br>
+
+    <p>Education List</p> 
+
+    <ul> 
+        {educationList.map(item => (
+          <li key={item.id}> 
+            {item.school}  
+          </li> 
+        ))}
+      </ul> 
+
+ 
+    </>
   )
 }
 
