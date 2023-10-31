@@ -9,8 +9,12 @@ function EducationControl(props) {
     function toggleEducationForm() {
       const { clearEducationData } = props
       clearEducationData()
+      setFormVisible(!isFormVisible) 
+    }
 
-      setFormVisible(!isFormVisible)
+    function handleSaveBtnPress() {
+      {props.addEducation()}
+      toggleEducationForm()
     }
 
     if (isFormVisible === true) {
@@ -18,7 +22,7 @@ function EducationControl(props) {
         <>
           <EducationForm handleInputsChange={props.handleInputsChange} />
           <button onClick={toggleEducationForm}>Cancel</button> 
-          <button onClick={props.addEducation}>Save</button> 
+          <button onClick={handleSaveBtnPress}>Save</button>
  
         </>
       ); 
