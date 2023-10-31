@@ -6,15 +6,15 @@ function EducationEditForm(props) {
       <>
         <br></br>
        <p>Edit Education Form</p>
-       <FormInput id="school" labelText="School" handleInputsChange={props.handleInputsChange}/> 
+       <FormInput id="school" labelText="School"/> 
        <br></br>
-       <FormInput id="degree" labelText="Degree" handleInputsChange={props.handleInputsChange}/>
+       <FormInput id="degree" labelText="Degree"/>
        <br></br>
-       <FormInput id="eduStart" labelText="Start Date" handleInputsChange={props.handleInputsChange}/>
+       <FormInput id="eduStart" labelText="Start Date"/>
        <br></br>
-       <FormInput id="eduEnd" labelText="End Date" handleInputsChange={props.handleInputsChange}/>
+       <FormInput id="eduEnd" labelText="End Date"/>
        <br></br>
-       <FormInput id="eduLocation" labelText="Location" handleInputsChange={props.handleInputsChange}/>
+       <FormInput id="eduLocation" labelText="Location"/>
        <br></br>
       </>
     );
