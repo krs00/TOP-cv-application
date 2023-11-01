@@ -9,7 +9,8 @@ function EducationListItem(props) {
     function showEditForm(e) {
       const btn = e.target
       const id = btn.getAttribute('id')
-      props.setCurrentEditId(id) 
+      props.updateCurrentEditObject(id) 
+      props.setCurrentEditId(id)
       props.toggleEditMode()
       props.toggleEducationForm()
       console.log(props.currentEditId)
