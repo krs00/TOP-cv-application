@@ -51,6 +51,27 @@ function App() {
     setFormData(updatedFormData) 
   }
 
+  function handleEducationUpdate(e, id) {
+      // grab the name attribute of the current input field
+      const name = e.target.name 
+      // grab text/value inputted into input field
+      const value = e.target.value 
+      // make a copy of the education list to avoid mutating state
+      const updatedEducationList = [ ...educationList ]
+
+      console.log(value)
+                               
+      for (let i = 0; i < updatedEducationList.length; i++) {
+
+        const currentEducation = updatedEducationList[i]
+        if (currentEducation.id === id ) {
+          currentEducation[name] = value
+        }
+      }
+
+      setEducationList(updatedEducationList) 
+  }
+
   function clearEducationData() {
     const updatedFormData = { ...formData }
     updatedFormData.school = ""
@@ -88,7 +109,8 @@ function App() {
     handleInputsChange={handleInputsChange} 
     clearEducationData={clearEducationData}
     educationList={educationList}
-    deleteEducation={deleteEducation} /> 
+    deleteEducation={deleteEducation}
+    handleEducationUpdate={handleEducationUpdate} /> 
 
 
 
