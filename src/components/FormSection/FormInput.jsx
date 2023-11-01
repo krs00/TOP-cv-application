@@ -3,15 +3,16 @@ function FormInput(props) {
     <>
       <label htmlFor={props.id}>{props.labelText}</label>
       <br></br>
-      <input
+      <input 
         type="text"
         id={props.id}
         name={props.id} 
         autoComplete="off" 
         spellCheck="false"
-        value={props.value} 
+        value={props.value}
+        defaultValue={props.defaultValue} 
         onChange={props.handleInputsChange}
-      /> 
+      />
     </>
   );
 }
