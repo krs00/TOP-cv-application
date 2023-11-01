@@ -29,16 +29,8 @@ function App() {
     description: '' 
   })
 
-  // holds created education objects
-  const [educationList, setEducationList] = useState([])
-
-  
-
-  function deleteEducation(idToRemove) {  
-    const updatedEducationList = [...educationList]
-    const filteredData = updatedEducationList.filter(item => item.id !== idToRemove);
-    setEducationList(filteredData)
-  }
+  // ~~~~~~~~~~~~~~~~~~~~~ PERSONAL FORM SECTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  // This function updates the the global object for personal form data
 
   function handleInputsChange(e) {
     // grab the name attribute of the current input field
@@ -52,7 +44,21 @@ function App() {
     // update form data with copy
     setFormData(updatedFormData) 
   }
+  // ~~~~~~~~~~~~~~~~~~~~~ PERSONAL FORM SECTION END ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+  // ~~~~~~~~~~~~~~~~~~~~~~~~ EDUCATION SECTION ~~~~~~~~~~~~~~~~~~~~~~~~
+
+  // holds created education objects
+  const [educationList, setEducationList] = useState([])
+
+  // this function will remove the currently selected education object in education control from the education list
+  function deleteEducation(idToRemove) {  
+    const updatedEducationList = [...educationList]
+    const filteredData = updatedEducationList.filter(item => item.id !== idToRemove);
+    setEducationList(filteredData)
+  }
+
+  // function for updating education objects inside education list for the edit form
   function handleEducationUpdate(e, id) {
       // grab the name attribute of the current input field
       const name = e.target.name 
@@ -70,6 +76,7 @@ function App() {
       setEducationList(updatedEducationList) 
   }
 
+  // clears education data from global form object "formData"
   function clearEducationData() {
     const updatedFormData = { ...formData }
     updatedFormData.school = ""
@@ -80,6 +87,7 @@ function App() {
     setFormData(updatedFormData) 
   }
 
+  // adds new education object to education list
   function addEducation() {
     const educationFormData = { ...formData }
 
@@ -96,13 +104,18 @@ function App() {
     setEducationList(updatedList)
     clearEducationData()
   }
+  // ~~~~~~~~~~~~~~~~~~~~~~~~ EDUCATION SECTION END ~~~~~~~~~~~~~~~~~~~~~~~~
+
+  // ~~~~~~~~~~~~~~~~~~~~~~~~ EXPERIENCE SECTION ~~~~~~~~~~~~~~~~~~~~~~~~
+
+   
 
 
 
  
   return (
     <> 
-    <FormSection
+    <FormSection 
     addEducation={addEducation} 
     handleInputsChange={handleInputsChange} 
     clearEducationData={clearEducationData}
