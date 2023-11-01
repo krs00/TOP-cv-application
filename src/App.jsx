@@ -32,6 +32,8 @@ function App() {
   // holds created education objects
   const [educationList, setEducationList] = useState([])
 
+  
+
   function deleteEducation(idToRemove) {  
     const updatedEducationList = [...educationList]
     const filteredData = updatedEducationList.filter(item => item.id !== idToRemove);
@@ -58,17 +60,13 @@ function App() {
       const value = e.target.value 
       // make a copy of the education list to avoid mutating state
       const updatedEducationList = [ ...educationList ]
-
-      console.log(value)
                                
       for (let i = 0; i < updatedEducationList.length; i++) {
-
         const currentEducation = updatedEducationList[i]
         if (currentEducation.id === id ) {
           currentEducation[name] = value
         }
       }
-
       setEducationList(updatedEducationList) 
   }
 
