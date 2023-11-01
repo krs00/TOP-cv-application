@@ -13,13 +13,13 @@ function EducationEditForm(props) {
        <p>Edit Education Form</p>
        <FormInput id="school" labelText="School" handleInputsChange={handleUpdate}/> 
        <br></br>
-       <FormInput id="degree" labelText="Degree" handleInputsChange={props.handleEducationUpdate}/>
+       <FormInput id="degree" labelText="Degree" handleInputsChange={handleUpdate}/>
        <br></br>
-       <FormInput id="eduStart" labelText="Start Date" handleInputsChange={props.handleEducationUpdate}/>
+       <FormInput id="eduStart" labelText="Start Date" handleInputsChange={handleUpdate}/>
        <br></br>
-       <FormInput id="eduEnd" labelText="End Date" handleInputsChange={props.handleEducationUpdate}/>
+       <FormInput id="eduEnd" labelText="End Date" handleInputsChange={handleUpdate}/>
        <br></br>
-       <FormInput id="eduLocation" labelText="Location" handleInputsChange={props.handleEducationUpdate}/>
+       <FormInput id="eduLocation" labelText="Location" handleInputsChange={handleUpdate}/>
        <br></br>
       </> 
     );
