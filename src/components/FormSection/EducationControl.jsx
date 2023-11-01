@@ -8,16 +8,26 @@ function EducationControl(props) {
   const [isFormVisible, setFormVisible] = useState(false)
   const [editMode, setEditMode] = useState(false)
   const [currentEditId, setCurrentEditId] = useState('')
+  const [ currentEditObject, setCurrentEditObject ] = useState({})
+
+  function updateCurrentEditObject(id) { 
+    const newList = [...props.educationList] 
+    for (let i = 0; i < newList.length; i++) {
+      if (newList[i].id === id) { 
+        setCurrentEditObject(newList[i])
+      }
+    }
+  }
 
 
   function toggleEditMode() {
-    setEditMode(!editMode)
+    setEditMode(!editMode) 
   }
 
   function toggleEducationForm() {
     const { clearEducationData } = props
     clearEducationData() 
-    setFormVisible(!isFormVisible)
+    setFormVisible(!isFormVisible) 
   }
 
   function toggleEditForm() {
@@ -43,7 +53,7 @@ function EducationControl(props) {
 
     return (
       <>
-      <EducationEditForm handleEducationUpdate={props.handleEducationUpdate}
+      <EducationEditForm currentEditObject={currentEditObject} handleEducationUpdate={props.handleEducationUpdate}
       currentEditId={currentEditId} />
       <button onClick={toggleEditForm}>Return</button>
       </>
@@ -58,7 +68,8 @@ function EducationControl(props) {
           toggleEditMode={toggleEditMode}
           toggleEducationForm={toggleEducationForm}
           setCurrentEditId={setCurrentEditId}
-          currentEditId={currentEditId} />
+          currentEditId={currentEditId}
+          updateCurrentEditObject={updateCurrentEditObject} />
 
         <button onClick={toggleEducationForm}>Add Education</button>
       </>
