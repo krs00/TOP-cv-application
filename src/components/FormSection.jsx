@@ -12,7 +12,8 @@ function FormSection(props) {
         handleInputsChange={props.handleInputsChange} 
         clearEducationData={props.clearEducationData}
         educationList={props.educationList}
-        deleteEducation={props.deleteEducation} />  
+        deleteEducation={props.deleteEducation}
+        handleEducationUpdate={props.handleEducationUpdate} />  
       </>
     );
   }
