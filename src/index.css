@@ -4,18 +4,19 @@
 
 html {
   font-family: 'Inter', sans-serif;
-}
+} 
 
 body { 
   background-color: rgb(229, 229, 229);
   padding-left: 4vw;
   padding-right: 4vw;
+  padding-top: 2vh;
 }
 
 .personal-details-modal {
   height: auto;
   width: auto; 
-  background-color: white;
+  background-color: white; 
   border-radius: 7px;
   padding-top: 15px;;
 } 
@@ -38,11 +39,12 @@ body {
   border: none;
   padding: 5px;
   background-color: rgb(229, 229, 229);
-  margin-top: 5px;
   border-radius: 10px;
 }
 
-
+.form-input-label {
+  margin-top: 10px;
+}
 
 .form-list-item { 
   width: 400px;
@@ -54,4 +56,71 @@ body {
 
 .no-list-style {
   list-style: none;
-} 
+  height: 0px;
+  width: 0px;
+}
+ 
+.modal-section { 
+  height: auto;
+  width: auto; 
+  background-color: white; 
+  border-radius: 7px;
+  padding-top: 15px;
+  margin-top: 3vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.education-modal-btn-section {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ BUTTON */
+/* CSS */
+.button-1 {
+  background-color: rgb(53, 118, 153);
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-bottom: 2vh;
+}
+
+.button-1:hover,
+.button-1:focus {
+  background-color: #F082AC;
+}

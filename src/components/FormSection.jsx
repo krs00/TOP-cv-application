@@ -5,7 +5,6 @@ import ExperienceControl from "./FormSection/experienceSection/ExperienceControl
 function FormSection(props) {
     return ( 
       <>
-        <p>Form Section</p>
         <PersonalDetailsForm handleInputsChange={props.handleInputsChange} />
         {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */}
         <EducationControl 

@@ -1,7 +1,7 @@
 function FormInput(props) {
   return ( 
     <>
-      <label htmlFor={props.id}>{props.labelText}</label>
+      <label className="form-input-label" htmlFor={props.id}>{props.labelText}</label>
       <input 
         type="text"
         id={props.id}
