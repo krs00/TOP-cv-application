@@ -7,12 +7,21 @@ function ResumeSection(props) {
        <p>{props.formData.phone}</p>
        <p>{props.formData.address}</p> 
 
-       <div>
+      <div>
       <h1>List of Education</h1>
       <ul> 
         {props.educationList.map((item) => (
           <li className="no-list-style" key={item.id}>{item.school}</li>
         ))}
+      </ul>
+      </div>
+
+      <div>
+      <h1>List of Experience</h1>
+      <ul>  
+        {props.experienceList.map((item) => (
+          <li className="no-list-style" key={item.id}>{item.company}</li>
+        ))} 
       </ul>
     </div>
 
