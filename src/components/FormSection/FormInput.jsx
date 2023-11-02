@@ -11,6 +11,8 @@ function FormInput(props) {
         value={props.value}
         defaultValue={props.defaultValue} 
         onChange={props.handleInputsChange}
+        placeholder={props.placeHolderText}
+        className="form-input" 
       />
     </>
   );

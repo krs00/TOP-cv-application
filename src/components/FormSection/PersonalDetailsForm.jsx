@@ -3,15 +3,14 @@ import FormInput from "./FormInput";
 function PersonalDetailsForm(props) {
     return ( 
       <> 
+       <div className="personal-details-modal"> 
+       <p className="modal-title">Personal Details</p>
        <div className="personal-details-form"> 
-       <p>personal details form</p>
-       <FormInput id="name" labelText="Full name" handleInputsChange={props.handleInputsChange}/>
-      
-       <FormInput id="email" labelText="Email" handleInputsChange={props.handleInputsChange}/>
-       
-       <FormInput id="phone" labelText="Phone" handleInputsChange={props.handleInputsChange}/>
-       
-       <FormInput id="address" labelText="Address" handleInputsChange={props.handleInputsChange}/>
+       <FormInput id="name" labelText="Full name" handleInputsChange={props.handleInputsChange} placeHolderText="First and last name"/>
+       <FormInput id="email" labelText="Email" handleInputsChange={props.handleInputsChange} placeHolderText="Enter email"/>
+       <FormInput id="phone" labelText="Phone" handleInputsChange={props.handleInputsChange} placeHolderText="Enter phone number"/>
+       <FormInput id="address" labelText="Address" handleInputsChange={props.handleInputsChange} placeHolderText="City, State/Country"/>
+       </div> 
        </div>
       </> 
     );
