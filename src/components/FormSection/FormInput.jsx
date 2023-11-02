@@ -2,7 +2,6 @@ function FormInput(props) {
   return ( 
     <>
       <label htmlFor={props.id}>{props.labelText}</label>
-      <br></br>
       <input 
         type="text"
         id={props.id}

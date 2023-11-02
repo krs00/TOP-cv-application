@@ -61,8 +61,7 @@ function EducationControl(props) {
 
   } else if (isFormVisible === false) {
     return (
-      <>  
-        <br></br>
+      <> 
          <button onClick={toggleEducationForm}>Add Education</button>
 
         <EducationList

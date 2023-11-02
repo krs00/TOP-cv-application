@@ -15,9 +15,7 @@ function FormSection(props) {
         educationList={props.educationList}
         deleteEducation={props.deleteEducation}
         handleEducationUpdate={props.handleEducationUpdate} />
-        <br></br>
         {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */}
-        <br></br>
         <ExperienceControl 
         addExperience={props.addExperience} 
         handleInputsChange={props.handleInputsChange} 
