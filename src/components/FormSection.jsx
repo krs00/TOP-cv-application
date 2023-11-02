@@ -1,5 +1,5 @@
 import PersonalDetailsForm from "./FormSection/PersonalDetailsForm";
-import EducationControl from "./FormSection/EducationControl";
+import EducationControl from "./FormSection/educationSection/EducationControl";
 
 function FormSection(props) {
     return ( 
@@ -7,7 +7,7 @@ function FormSection(props) {
         <p>Form Section</p>
         <PersonalDetailsForm handleInputsChange={props.handleInputsChange} />
 
-        <EducationControl
+        <EducationControl 
         addEducation={props.addEducation}
         handleInputsChange={props.handleInputsChange} 
         clearEducationData={props.clearEducationData}

@@ -12,7 +12,7 @@ function EducationListItem(props) {
       props.updateCurrentEditObject(id) 
       props.setCurrentEditId(id)
       props.toggleEditMode()
-      props.toggleEducationForm()
+      props.toggleEducationForm() 
     } 
 
 
