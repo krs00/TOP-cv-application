@@ -112,7 +112,7 @@ function App() {
 
 
 
- 
+  
   return (
     <> 
     <FormSection 
@@ -126,7 +126,8 @@ function App() {
 
 
 
-    <ResumeSection formData={formData} />
+    <ResumeSection formData={formData}  
+                  educationList={educationList} />
 
  
     </>
