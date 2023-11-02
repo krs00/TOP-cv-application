@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import EducationForm from "./EducationForm";
-import EducationList from "./EducationList";
-import EducationEditForm from './EducationEditForm';
+import ExperienceForm from "./ExperienceForm";
+import ExperienceList from "./ExperienceList";
+import ExperienceEditForm from './ExperienceEditForm';
 
-function EducationControl(props) {
+function ExperienceControl(props) {
 
   const [isFormVisible, setFormVisible] = useState(false)
   const [editMode, setEditMode] = useState(false)
@@ -11,7 +11,7 @@ function EducationControl(props) {
   const [ currentEditObject, setCurrentEditObject ] = useState({})
 
   function updateCurrentEditObject(id) { 
-    const newList = [...props.educationList] 
+    const newList = [...props.experienceList] 
     for (let i = 0; i < newList.length; i++) {
       if (newList[i].id === id) { 
         setCurrentEditObject(newList[i])
@@ -24,27 +24,27 @@ function EducationControl(props) {
     setEditMode(!editMode) 
   }
 
-  function toggleEducationForm() {
-    const { clearEducationData } = props
-    clearEducationData() 
+  function toggleExperienceForm() {
+    const { clearExperienceData } = props
+    clearExperienceData()
     setFormVisible(!isFormVisible) 
   }
 
   function toggleEditForm() {
     toggleEditMode()
-    toggleEducationForm()
+    toggleExperienceForm()
   }
 
   function handleSaveBtnPress() {
-    { props.addEducation() }
-    toggleEducationForm()
+    { props.addExperience() }
+    toggleExperienceForm()
   }
 
   if (isFormVisible === true && editMode === false) {
     return (
       <>
-        <EducationForm handleInputsChange={props.handleInputsChange} />
-        <button onClick={toggleEducationForm}>Return</button> 
+        <ExperienceForm handleInputsChange={props.handleInputsChange} />
+        <button onClick={toggleExperienceForm}>Return</button> 
         <button onClick={handleSaveBtnPress}>Save</button>
 
       </>
@@ -53,7 +53,7 @@ function EducationControl(props) {
 
     return (
       <>
-      <EducationEditForm currentEditObject={currentEditObject} handleEducationUpdate={props.handleEducationUpdate}
+      <ExperienceEditForm currentEditObject={currentEditObject} handleExperienceUpdate={props.handleExperienceUpdate}
       currentEditId={currentEditId} />
       <button onClick={toggleEditForm}>Return</button>
       </>
@@ -61,21 +61,20 @@ function EducationControl(props) {
 
   } else if (isFormVisible === false) {
     return (
-      <>  
-        <br></br>
-         <button onClick={toggleEducationForm}>Add Education</button>
-
-        <EducationList
-          educationList={props.educationList}
-          deleteEducation={props.deleteEducation}
+      <>
+        <ExperienceList
+          experienceList={props.experienceList}
+          deleteExperience={props.deleteExperience}
           toggleEditMode={toggleEditMode}
-          toggleEducationForm={toggleEducationForm}
+          toggleExperienceForm={toggleExperienceForm}
           setCurrentEditId={setCurrentEditId}
           currentEditId={currentEditId}
           updateCurrentEditObject={updateCurrentEditObject} />
+
+        <button onClick={toggleExperienceForm}>Add Experience</button>
       </>
     );
   }
 }
 
-export default EducationControl;
+export default ExperienceControl;
