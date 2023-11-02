@@ -84,7 +84,7 @@ function App() {
     updatedFormData.eduStart = ""
     updatedFormData.eduEnd = ""
     updatedFormData.eduLocation = ""
-    setFormData(updatedFormData) 
+    setFormData(updatedFormData)
   }
 
   // adds new education object to education list
@@ -106,30 +106,86 @@ function App() {
   }
   // ~~~~~~~~~~~~~~~~~~~~~~~~ EDUCATION SECTION END ~~~~~~~~~~~~~~~~~~~~~~~~
 
+  // The next section is the same methods/functions but for the experience section
+  // not very DRY, I'll see if I can refractor later
+
   // ~~~~~~~~~~~~~~~~~~~~~~~~ EXPERIENCE SECTION ~~~~~~~~~~~~~~~~~~~~~~~~
 
+  
+    const [experienceList, setExperienceList] = useState([])
+
+    function deleteExperience(idToRemove) {  
+      const updatedExperienceList = [...experienceList]
+      const filteredData = updatedExperienceList.filter(item => item.id !== idToRemove);
+      setExperienceList(filteredData)
+    }
+  
    
+    function handleExperienceUpdate(e, id) {
+        const name = e.target.name 
+        const value = e.target.value 
+        const updatedExperienceList = [ ...experienceList ]
+                                 
+        for (let i = 0; i < updatedExperienceList.length; i++) {
+          const currentExperience = updatedExperienceList[i]
+          if (currentExperience.id === id ) {
+            currentExperience[name] = value
+          }
+        }
+        setExperienceList(updatedExperienceList) 
+    }
+  
+    function clearExperienceData() {
+      const updatedFormData = { ...formData }
+      updatedFormData.company = ""
+      updatedFormData.title = ""
+      updatedFormData.expStart = ""
+      updatedFormData.expEnd = ""
+      updatedFormData.expLocation = ""
+      updatedFormData.description = ""
 
+      setFormData(updatedFormData) 
+    }
+  
 
-
+    function addExperience() {
+      const experienceFormData = { ...formData }
+  
+      const newExperience = {
+        id: uuidv4(),
+        company: experienceFormData.company, 
+        title: experienceFormData.title,
+        expStart: experienceFormData.expStart,
+        expEnd: experienceFormData.expEnd,
+        expLocation: experienceFormData.expLocation,
+        description: experienceFormData.description
+      }
+      const updatedList = [...experienceList]
+      updatedList.push(newExperience)
+      setExperienceList(updatedList)
+      clearExperienceData()
+    }
   
   return (
     <> 
-    <FormSection 
+    <FormSection
+    // For Global personal data form!
+    handleInputsChange={handleInputsChange}
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
     addEducation={addEducation} 
-    handleInputsChange={handleInputsChange} 
     clearEducationData={clearEducationData}
     educationList={educationList}
     deleteEducation={deleteEducation}
-    handleEducationUpdate={handleEducationUpdate} /> 
+    handleEducationUpdate={handleEducationUpdate}
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    addExperience={addExperience}
+    clearExperienceData={clearExperienceData}
+    experienceList={experienceList}
+    deleteExperience={deleteExperience}
+    handleExperienceUpdate={handleExperienceUpdate}/> 
 
 
-
-
-    <ResumeSection formData={formData}  
-                  educationList={educationList} />
-
- 
+    <ResumeSection formData={formData} educationList={educationList} experienceList={experienceList} />
     </>
   )
 }
