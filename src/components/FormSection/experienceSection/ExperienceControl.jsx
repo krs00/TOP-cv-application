@@ -44,7 +44,7 @@ function ExperienceControl(props) {
     return (
       <div className='form-section-modal'>
         <p className="form-modal-title">Add an experience</p>
-        <ExperienceForm handleInputsChange={props.handleInputsChange} />
+        <ExperienceForm handleInputsChange={props.handleInputsChange} currentEditObject={currentEditObject} />
         <div className='btns-row'>
           <button className='button-1' onClick={toggleExperienceForm}>Return</button>
           <button className='button-1' onClick={handleSaveBtnPress}>Save</button>
@@ -55,7 +55,7 @@ function ExperienceControl(props) {
 
     return (
       <div className='form-section-modal'>
-        <ExperienceEditForm currentEditObject={currentEditObject} handleExperienceUpdate={props.handleExperienceUpdate}
+        <ExperienceEditForm handleInputsChange={props.handleInputsChange} currentEditObject={currentEditObject} handleExperienceUpdate={props.handleExperienceUpdate}
           currentEditId={currentEditId} />
         <button className='button-1' onClick={toggleEditForm}>Return</button>
       </div>

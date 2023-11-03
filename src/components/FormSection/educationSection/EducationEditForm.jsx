@@ -14,11 +14,11 @@ function EducationEditForm(props) {
 
       <p className="form-modal-title">Edit education</p>
       <div className="form-container">
-        <FormInput id="school" labelText="School" handleInputsChange={handleUpdate} defaultValue={currentEducation.school} />
-        <FormInput id="degree" labelText="Degree" handleInputsChange={handleUpdate} defaultValue={currentEducation.degree} />
-        <FormInput id="eduStart" labelText="Start Date" handleInputsChange={handleUpdate} defaultValue={currentEducation.eduStart} />
-        <FormInput id="eduEnd" labelText="End Date" handleInputsChange={handleUpdate} defaultValue={currentEducation.eduEnd} />
-        <FormInput id="eduLocation" labelText="Location" handleInputsChange={handleUpdate} defaultValue={currentEducation.eduLocation} />
+        <FormInput id="school" labelText="School" handleInputsChange={handleUpdate} defaultValue={currentEducation.school} type="text"  />
+        <FormInput id="degree" labelText="Degree" handleInputsChange={handleUpdate} defaultValue={currentEducation.degree} type="text"  />
+        <FormInput id="eduStart" labelText="Start Date" handleInputsChange={handleUpdate} defaultValue={currentEducation.eduStart} type="text"  />
+        <FormInput id="eduEnd" labelText="End Date" handleInputsChange={handleUpdate} defaultValue={currentEducation.eduEnd} type="text"  />
+        <FormInput id="eduLocation" labelText="Location" handleInputsChange={handleUpdate} defaultValue={currentEducation.eduLocation} type="text"  />
       </div>
     </>
   );

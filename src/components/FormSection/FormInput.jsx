@@ -3,7 +3,7 @@ function FormInput(props) {
     <>
       <label htmlFor={props.id}>{props.labelText}</label>
       <input 
-        type="text"
+        type={props.type}
         id={props.id}
         name={props.id} 
         autoComplete="off" 

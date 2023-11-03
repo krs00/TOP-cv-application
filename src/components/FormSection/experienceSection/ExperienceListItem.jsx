@@ -20,8 +20,10 @@ function ExperienceListItem(props) {
       <>
        <div> 
         <p>{props.item.company}</p>
-        <button id={props.item.id} onClick={showEditForm}>Edit</button> 
-        <button id={props.item.id} onClick={deleteClicked}>Delete</button> 
+        <div className="btns-row">
+        <button className="button-1" id={props.item.id} onClick={showEditForm}>Edit</button> 
+        <button className="button-1" id={props.item.id} onClick={deleteClicked}>Delete</button>
+        </div>
        </div> 
       </> 
     );

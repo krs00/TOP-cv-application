@@ -24,7 +24,7 @@ ul {
   padding: 4vh 6vw 0 6vw;
   display: flex;
   gap: 3vw; 
-
+  justify-content: center;
 }
 
 
@@ -32,10 +32,6 @@ ul {
   display: flex;
   flex-direction: column; 
 }
-
-
-
-
 
 /* RESUME SECTION */
 .resume-section {
@@ -48,6 +44,20 @@ min-width: 800px;
 background-color: #123b6e;
 width: auto;
 min-height: 150px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+.resume-header-name {
+  color: white;
+  font-size: 2em;
+}
+
+.resume-header-text {
+  color: white;
+  font-size: 1em;
 }
 
 .resume-body {
@@ -114,6 +124,11 @@ padding: 30px;
   margin-top: 12px;
   margin-bottom: 12px;
   font-size: 2em;
+}
+
+.resume-personals-section {
+  display: flex;
+  gap: 10px;
 }
 
 
