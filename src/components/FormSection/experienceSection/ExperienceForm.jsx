@@ -6,6 +6,7 @@ function ExperienceForm(props) {
       <>
       
        <p>Add Experience Form</p>
+       <div className="form-container">
        <FormInput id="company" labelText="School" handleInputsChange={props.handleInputsChange}/>
     
        <FormInput id="title" labelText="Degree" handleInputsChange={props.handleInputsChange}/>
@@ -17,7 +18,7 @@ function ExperienceForm(props) {
        <FormInput id="expLocation" labelText="Location" handleInputsChange={props.handleInputsChange}/>
       
        <FormInput id="description" labelText="Description" handleInputsChange={props.handleInputsChange}/>
-      
+       </div>
       </>
     );
   }

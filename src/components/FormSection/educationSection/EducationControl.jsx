@@ -43,10 +43,13 @@ function EducationControl(props) {
   if (isFormVisible === true && editMode === false) {
     return (
       <div className='form-section-modal'>
+        <p className="form-modal-title">Add an education</p>
         <EducationForm handleInputsChange={props.handleInputsChange} />
-        <button onClick={toggleEducationForm}>Return</button>
-        <button onClick={handleSaveBtnPress}>Save</button>
-      </div> 
+        <div className='btns-row'>
+          <button className='button-1' onClick={toggleEducationForm}>Return</button>
+          <button className='button-1' onClick={handleSaveBtnPress}>Save</button>
+        </div>
+      </div>
     );
   } else if (isFormVisible === true && editMode === true) {
 
@@ -54,27 +57,29 @@ function EducationControl(props) {
       <div className='form-section-modal'>
         <EducationEditForm currentEditObject={currentEditObject} handleEducationUpdate={props.handleEducationUpdate}
           currentEditId={currentEditId} />
-        <button onClick={toggleEditForm}>Return</button>
+        <button className='button-1' onClick={toggleEditForm}>Return</button>
       </div>
     )
 
   } else if (isFormVisible === false) {
     return (
       <>
-          <div className='form-section-modal'>
+
+        <div className='form-section-modal'>
+          <p className="form-modal-title">Education List</p>
           <div className='utility-center'>
-          <button className='button-1' onClick={toggleEducationForm}>Add Education</button>
+            <button className='button-1' onClick={toggleEducationForm}>Add Education</button>
           </div>
-          <EducationList 
-          educationList={props.educationList}
-          deleteEducation={props.deleteEducation}
-          toggleEditMode={toggleEditMode}
-          toggleEducationForm={toggleEducationForm}
-          setCurrentEditId={setCurrentEditId}
-          currentEditId={currentEditId}
-          updateCurrentEditObject={updateCurrentEditObject} />
-          </div>
-          </>
+          <EducationList
+            educationList={props.educationList}
+            deleteEducation={props.deleteEducation}
+            toggleEditMode={toggleEditMode}
+            toggleEducationForm={toggleEducationForm}
+            setCurrentEditId={setCurrentEditId}
+            currentEditId={currentEditId}
+            updateCurrentEditObject={updateCurrentEditObject} />
+        </div>
+      </>
     );
   }
 }

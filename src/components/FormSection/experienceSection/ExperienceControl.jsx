@@ -8,12 +8,12 @@ function ExperienceControl(props) {
   const [isFormVisible, setFormVisible] = useState(false)
   const [editMode, setEditMode] = useState(false)
   const [currentEditId, setCurrentEditId] = useState('')
-  const [ currentEditObject, setCurrentEditObject ] = useState({})
+  const [currentEditObject, setCurrentEditObject] = useState({})
 
-  function updateCurrentEditObject(id) { 
-    const newList = [...props.experienceList] 
+  function updateCurrentEditObject(id) {
+    const newList = [...props.experienceList]
     for (let i = 0; i < newList.length; i++) {
-      if (newList[i].id === id) { 
+      if (newList[i].id === id) {
         setCurrentEditObject(newList[i])
       }
     }
@@ -21,13 +21,13 @@ function ExperienceControl(props) {
 
 
   function toggleEditMode() {
-    setEditMode(!editMode) 
+    setEditMode(!editMode)
   }
 
   function toggleExperienceForm() {
     const { clearExperienceData } = props
     clearExperienceData()
-    setFormVisible(!isFormVisible) 
+    setFormVisible(!isFormVisible)
   }
 
   function toggleEditForm() {
@@ -42,35 +42,43 @@ function ExperienceControl(props) {
 
   if (isFormVisible === true && editMode === false) {
     return (
-      <>
+      <div className='form-section-modal'>
+        <p className="form-modal-title">Add an experience</p>
         <ExperienceForm handleInputsChange={props.handleInputsChange} />
-        <button onClick={toggleExperienceForm}>Return</button> 
-        <button onClick={handleSaveBtnPress}>Save</button>
-      </>
+        <div className='btns-row'>
+          <button className='button-1' onClick={toggleExperienceForm}>Return</button>
+          <button className='button-1' onClick={handleSaveBtnPress}>Save</button>
+        </div>
+      </div>
     );
   } else if (isFormVisible === true && editMode === true) {
 
     return (
-      <>
-      <ExperienceEditForm currentEditObject={currentEditObject} handleExperienceUpdate={props.handleExperienceUpdate}
-      currentEditId={currentEditId} />
-      <button onClick={toggleEditForm}>Return</button>
-      </>
+      <div className='form-section-modal'>
+        <ExperienceEditForm currentEditObject={currentEditObject} handleExperienceUpdate={props.handleExperienceUpdate}
+          currentEditId={currentEditId} />
+        <button className='button-1' onClick={toggleEditForm}>Return</button>
+      </div>
     )
 
   } else if (isFormVisible === false) {
     return (
       <>
-        <ExperienceList 
-          experienceList={props.experienceList}
-          deleteExperience={props.deleteExperience}
-          toggleEditMode={toggleEditMode}
-          toggleExperienceForm={toggleExperienceForm}
-          setCurrentEditId={setCurrentEditId}
-          currentEditId={currentEditId}
-          updateCurrentEditObject={updateCurrentEditObject} />
 
-        <button onClick={toggleExperienceForm}>Add Experience</button>
+        <div className='form-section-modal'>
+          <p className="form-modal-title">Experience List</p>
+          <div className='utility-center'>
+            <button className='button-1' onClick={toggleExperienceForm}>Add Experience</button>
+          </div>
+          <ExperienceList
+            experienceList={props.experienceList}
+            deleteExperience={props.deleteExperience}
+            toggleEditMode={toggleEditMode}
+            toggleExperienceForm={toggleExperienceForm}
+            setCurrentEditId={setCurrentEditId}
+            currentEditId={currentEditId}
+            updateCurrentEditObject={updateCurrentEditObject} />
+        </div>
       </>
     );
   }

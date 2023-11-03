@@ -27,8 +27,10 @@ ul {
 
 }
 
-.form-section {
 
+.form-container {
+  display: flex;
+  flex-direction: column; 
 }
 
 
@@ -89,6 +91,8 @@ padding: 30px;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
 
 .button-1:hover,
@@ -101,7 +105,16 @@ padding: 30px;
   justify-content: center;
 }
 
+
+.btns-row {
+  display: flex;
+  gap: 5px;
+}
+
 .form-modal-title {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  font-size: 2em;
 }
 
 
