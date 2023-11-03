@@ -5,7 +5,10 @@ import ExperienceControl from "./FormSection/experienceSection/ExperienceControl
 function FormSection(props) {
     return ( 
       <>
+      <div className="form-section">
+        <div className="form-section-modal">
         <PersonalDetailsForm handleInputsChange={props.handleInputsChange} />
+        </div>
         {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */}
         <EducationControl 
         addEducation={props.addEducation} 
@@ -22,7 +25,7 @@ function FormSection(props) {
         experienceList={props.experienceList}
         deleteExperience={props.deleteExperience}
         handleExperienceUpdate={props.handleExperienceUpdate} />
-
+      </div>
       </>
     );
   }

@@ -46,7 +46,6 @@ function ExperienceControl(props) {
         <ExperienceForm handleInputsChange={props.handleInputsChange} />
         <button onClick={toggleExperienceForm}>Return</button> 
         <button onClick={handleSaveBtnPress}>Save</button>
-
       </>
     );
   } else if (isFormVisible === true && editMode === true) {
@@ -62,7 +61,7 @@ function ExperienceControl(props) {
   } else if (isFormVisible === false) {
     return (
       <>
-        <ExperienceList
+        <ExperienceList 
           experienceList={props.experienceList}
           deleteExperience={props.deleteExperience}
           toggleEditMode={toggleEditMode}

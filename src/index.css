@@ -8,93 +8,65 @@ html {
 
 body { 
   background-color: rgb(229, 229, 229);
-  padding-left: 4vw;
-  padding-right: 4vw;
-  padding-top: 2vh;
+  height: 100vh; 
+  width: 100vw;
 }
 
-.personal-details-modal {
+ul {
+  list-style: none; 
+  margin: 0; 
+  padding: 0;
+}
+
+#root {
+  /* height: 100vh; */
+  width: 100vw;
+  padding: 4vh 6vw 0 6vw;
+  display: flex;
+  gap: 3vw; 
+
+}
+
+.form-section {
+
+}
+
+
+
+
+
+/* RESUME SECTION */
+.resume-section {
+display: flex;
+flex-direction: column;
+min-width: 800px;
+}
+
+.resume-header {
+background-color: #123b6e;
+width: auto;
+min-height: 150px;
+}
+
+.resume-body {
+background-color: white;
+width: auto;
+padding: 30px;  
+}
+
+.form-section-modal {
   height: auto;
-  width: auto; 
-  background-color: white; 
-  border-radius: 7px;
-  padding-top: 15px;;
-} 
-
-.modal-title {
-  font-size: 2rem;
-  text-align: center;
-  font-weight: bold;
+  width: auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 3px;
+  margin-bottom: 3vh;
 }
-
-.personal-details-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  padding: 10%;
-  padding-top: 5%;
-}
-
-.form-input {
-  border: none;
-  padding: 5px;
-  background-color: rgb(229, 229, 229);
-  border-radius: 10px;
-}
-
-.form-input-label {
-  margin-top: 10px;
-}
-
-.form-list-item { 
-  width: 400px;
-  height: 50px;
-  background-color: rgb(200, 200, 200); 
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.no-list-style {
-  list-style: none;
-  height: 0px;
-  width: 0px;
-}
- 
-.modal-section { 
-  height: auto;
-  width: auto; 
-  background-color: white; 
-  border-radius: 7px;
-  padding-top: 15px;
-  margin-top: 3vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.education-modal-btn-section {
-  display: flex;
-  justify-content: center;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ BUTTON */
 /* CSS */
 .button-1 {
-  background-color: rgb(53, 118, 153);
+  background-color: #357699;
   border-radius: 8px;
   border-style: none;
   box-sizing: border-box;
@@ -117,10 +89,21 @@ body {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  margin-bottom: 2vh;
 }
 
 .button-1:hover,
 .button-1:focus {
-  background-color: #F082AC;
+  background-color: #4091bd;
 }
+
+.utility-center {
+  display: flex;
+  justify-content: center;
+}
+
+.form-modal-title {
+}
+
+
+
+

@@ -42,7 +42,7 @@ function EducationControl(props) {
 
   if (isFormVisible === true && editMode === false) {
     return (
-      <div className='modal-section'>
+      <div className='form-section-modal'>
         <EducationForm handleInputsChange={props.handleInputsChange} />
         <button onClick={toggleEducationForm}>Return</button>
         <button onClick={handleSaveBtnPress}>Save</button>
@@ -51,7 +51,7 @@ function EducationControl(props) {
   } else if (isFormVisible === true && editMode === true) {
 
     return (
-      <div className='modal-section'>
+      <div className='form-section-modal'>
         <EducationEditForm currentEditObject={currentEditObject} handleEducationUpdate={props.handleEducationUpdate}
           currentEditId={currentEditId} />
         <button onClick={toggleEditForm}>Return</button>
@@ -60,11 +60,12 @@ function EducationControl(props) {
 
   } else if (isFormVisible === false) {
     return (
-      <div className='modal-section'>
-        <div className='education-modal-btn-section'>
+      <>
+          <div className='form-section-modal'>
+          <div className='utility-center'>
           <button className='button-1' onClick={toggleEducationForm}>Add Education</button>
-        </div> 
-        <EducationList 
+          </div>
+          <EducationList 
           educationList={props.educationList}
           deleteEducation={props.deleteEducation}
           toggleEditMode={toggleEditMode}
@@ -72,9 +73,8 @@ function EducationControl(props) {
           setCurrentEditId={setCurrentEditId}
           currentEditId={currentEditId}
           updateCurrentEditObject={updateCurrentEditObject} />
-      </div>
-
-
+          </div>
+          </>
     );
   }
 }

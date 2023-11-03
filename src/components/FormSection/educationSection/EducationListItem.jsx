@@ -18,7 +18,7 @@ function EducationListItem(props) {
 
     return (
       <>
-       <div className="education-list-item"> 
+       <div> 
         <p>{props.item.school}</p>
         <button id={props.item.id} onClick={showEditForm}>Edit</button> 
         <button id={props.item.id} onClick={deleteClicked}>Delete</button> 

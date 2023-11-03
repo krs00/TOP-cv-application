@@ -66,7 +66,7 @@ function App() {
       const value = e.target.value 
       // make a copy of the education list to avoid mutating state
       const updatedEducationList = [ ...educationList ]
-                               
+      
       for (let i = 0; i < updatedEducationList.length; i++) {
         const currentEducation = updatedEducationList[i]
         if (currentEducation.id === id ) {
@@ -167,7 +167,7 @@ function App() {
     }
   
   return (
-    <> 
+    <>
     <FormSection
     // For Global personal data form!
     handleInputsChange={handleInputsChange}
@@ -182,8 +182,7 @@ function App() {
     clearExperienceData={clearExperienceData}
     experienceList={experienceList}
     deleteExperience={deleteExperience}
-    handleExperienceUpdate={handleExperienceUpdate}/> 
-
+    handleExperienceUpdate={handleExperienceUpdate}/>
 
     <ResumeSection formData={formData} educationList={educationList} experienceList={experienceList} />
     </>
