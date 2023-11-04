@@ -7,12 +7,12 @@ function ExperienceForm(props) {
   return (
     <>
       <div className="form-container">
-        <FormInput id="company" labelText="Company" handleInputsChange={props.handleInputsChange} />
-        <FormInput id="title" labelText="Title" handleInputsChange={props.handleInputsChange} />
-        <FormInput id="expStart" labelText="Start Date" handleInputsChange={props.handleInputsChange} />
-        <FormInput id="expEnd" labelText="End Date" handleInputsChange={props.handleInputsChange} />
-        <FormInput id="expLocation" labelText="Location" handleInputsChange={props.handleInputsChange} />
-        <FormInput id="description" labelText="Description" handleInputsChange={props.handleInputsChange}/>
+        <FormInput id="company" labelText="Company" handleInputsChange={props.handleInputsChange} placeHolderText="Enter Company Name" />
+        <FormInput id="title" labelText="Title" handleInputsChange={props.handleInputsChange} placeHolderText="Enter Position Title" />
+        <FormInput id="expStart" labelText="Start Date" handleInputsChange={props.handleInputsChange} placeHolderText="Enter Start Date" />
+        <FormInput id="expEnd" labelText="End Date" handleInputsChange={props.handleInputsChange} placeHolderText="Enter End Date" />
+        <FormInput id="expLocation" labelText="Location" handleInputsChange={props.handleInputsChange} placeHolderText="Enter Location" />
+        <FormInput id="description" labelText="Description" handleInputsChange={props.handleInputsChange} placeHolderText="Enter Description"/>
         {/* <label htmlFor="description">Description</label> 
         <div>
           <textarea

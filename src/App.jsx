@@ -170,7 +170,7 @@ function App() {
     <>
     <FormSection
     // For Global personal data form!
-    handleInputsChange={handleInputsChange}
+    handleInputsChange={handleInputsChange} 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
     addEducation={addEducation} 
     clearEducationData={clearEducationData}
