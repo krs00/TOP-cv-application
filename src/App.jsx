@@ -3,7 +3,7 @@ import FormSection from './components/FormSection';
 import ResumeSection from './components/ResumeSection';
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
- 
+
 
 function App() {
 
