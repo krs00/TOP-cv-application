@@ -63,7 +63,8 @@ justify-content: center;
 .resume-body {
 background-color: white;
 width: auto;
-padding: 30px;  
+padding: 30px;
+min-height: 800px;
 }
 
 .form-section-modal {
@@ -130,6 +131,33 @@ padding: 30px;
   display: flex;
   gap: 10px;
 }
+
+.resume-item {
+  background-color: white;
+  height: 150px;
+  display: flex;
+}
+
+.box1 { 
+  flex-grow: .5;
+  display: flex;
+  flex-direction: column;
+}
+
+.box2 {
+  flex-grow: 3;
+  display: flex; 
+  flex-direction: column;
+}
+
+.resume-item-dates {
+  display: flex;
+}
+
+.bold-font {
+  font-weight: bolder;
+}
+
 
 
 
